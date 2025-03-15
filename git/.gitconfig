@@ -1,3 +1,9 @@
 [user]
 	email = 47799153+GitDoVitor@users.noreply.github.com
 	name = gitdovitor
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
