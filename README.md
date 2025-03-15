@@ -17,6 +17,8 @@ swww
 hyprlock
 hypridle
 fzf
+lazygit
+github-cli
 
 ghostty
 hypr
