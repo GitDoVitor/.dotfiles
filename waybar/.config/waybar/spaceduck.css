@@ -1,0 +1,13 @@
+@define-color space-black #000000;
+@define-color space-red #e33400;
+@define-color space-green #5ccc96;
+@define-color space-purple #b3a1e6;
+@define-color space-cyan #00a3cc;
+@define-color space-yellow #f2ce00;
+@define-color space-purple2 #7a5ccc;
+@define-color space-dark-purple #686f9a;
+@define-color background #0f111b;
+@define-color foreground #ecf0c1;
+@define-color selection-text #ecf0c1;
+@define-color selection-background #686f9a;
+@define-color selection-foreground #ffffff;
