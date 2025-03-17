@@ -17,6 +17,5 @@ vim.opt.incsearch = true -- incrementally highlight searches as you type
 
 vim.opt.termguicolors = true -- enable true color support
 
-vim.opt.scrolloff = 8 -- minimum number of lines to keep above and below the cursor
-vim.opt.sidescrolloff = 8 --minimum number of columns to keep above and below the cursor1
-
+vim.opt.scrolloff = 12 -- minimum number of lines to keep above and below the cursor
+vim.opt.sidescrolloff = 12--minimum number of columns to keep above and below the cursor1
