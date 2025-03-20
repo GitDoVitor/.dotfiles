@@ -1,2 +1,6 @@
 theme = spaceduck
-font-family = JetBrains Mono Nerd Font
+font-family = JetBrainsMono NF
+font-family-italic = JetBrainsMono NF Italic
+font-family-bold = JetBrainsMono NF Bold
+
+config-file = keybinds

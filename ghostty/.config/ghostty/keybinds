@@ -1,0 +1,3 @@
+keybind = ctrl+d=new_split:right
+keybind = performable:ctrl+c=copy_to_clipboard
+keybind = ctrl+v=paste_from_clipboard
