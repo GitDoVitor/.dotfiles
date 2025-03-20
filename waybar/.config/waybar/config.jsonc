@@ -3,26 +3,38 @@
     "spacing": 4, // Gaps between modules (4px)
     "modules-left": [
       "idle_inhibitor",
-      "hyprland/workspaces",
       "hyprland/window",
     ],
     "modules-center": [
     ],
     "modules-right": [
       "network",
-        "pulseaudio",
-        "disk",
-        "cpu",
-        "memory",
-        "temperature",
-        "backlight",
-        "battery",
-        "clock",
+      "custom/separator",
+      "pulseaudio",
+      "custom/separator",
+      "disk",
+      "custom/separator",
+      "cpu",
+      "custom/separator",
+      "memory",
+      "custom/separator",
+      "temperature",
+      "custom/separator",
+      "backlight",
+      "custom/separator",
+      "battery",
+      "custom/separator",
+      "clock",
     ],
+    "custom/separator": {
+      "format": "/",
+      "interval": "once",
+      "tooltip": false
+    },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "idle on",
+            "activated": "idle on ",
             "deactivated": "idle off"
         },
         "tooltip": false
@@ -32,51 +44,51 @@
         "tooltip": false
     },
     "cpu": {
-        "format": "CPU {usage}%",
+        "format": "<span color=\"#ecf0c1\">CPU</span> {usage}%",
         "tooltip": false
     },
     "memory": {
-        "format": "RAM {}%"
+        "format": "<span color=\"#ecf0c1\">RAM</span> {}%"
     },
     "temperature": {
         "critical-threshold": 80,
-        "format": "TEMP {temperatureC}°C",
+        "format": "<span color=\"#ecf0c1\">TEMP</span> {temperatureC}°C",
     },
     "backlight": {
-        "format": "B-LIGHT {percent}%",
+        "format": "<span color=\"#ecf0c1\">B-LIGHT</span> {percent}%",
     },
     "battery": {
         "states": {
             "warning": 30,
             "critical": 15
         },
-        "format": "BAT {capacity}%",
-        "format-full": "BAT full",
-        "format-charging": "BAT charging",
-        "format-plugged": "BAT plugged",
+        "format": "<span color=\"#ecf0c1\">BAT</span> {capacity}%",
+        "format-full": "<span color=\"#ecf0c1\">BAT</span> full",
+        "format-charging": "<span color=\"#ecf0c1\">BAT</span> charging",
+        "format-plugged": "<span color=\"#ecf0c1\">BAT</span> plugged",
         "tooltip": false
     },
     "network": {
         "interval": 1,
         "tooltip": false,
-        "format-wifi": "{ifname} +{bandwidthUpBytes} -{bandwidthDownBytes}",
-        "format-ethernet": "{ifname} +{bandwidthUpBytes} -{bandwidthDownBytes}",
+        "format-wifi": "<span color=\"#ecf0c1\">{ifname}</span> +{bandwidthUpBytes} -{bandwidthDownBytes}",
+        "format-ethernet": "<span color=\"#ecf0c1\">{ifname}</span> +{bandwidthUpBytes} -{bandwidthDownBytes}",
         "format-disconnected": "disconnected",
     },
     "pulseaudio": {
-        "format": "VOL {volume}% {format_source}",
-        "format-bluetooth": "BLU {volume}% {format_source}",
-        "format-bluetooth-muted": "BLU muted {format_source}",
-        "format-muted": "MIC muted {format_source}",
-        "format-source": "MIC {volume}%",
-        "format-source-muted": "MIC muted",
+        "format": "<span color=\"#ecf0c1\">VOL</span> {volume}% {format_source}",
+        "format-bluetooth": "<span color=\"#ecf0c1\">BLU</span> {volume}% {format_source}",
+        "format-bluetooth-muted": "<span color=\"#ecf0c1\">BLU</span> muted {format_source}",
+        "format-muted": "<span color=\"#ecf0c1\">MIC</span> muted {format_source}",
+        "format-source": "<span color=\"#ecf0c1\">MIC</span> {volume}%",
+        "format-source-muted": "<span color=\"#ecf0c1\">MIC</span> muted",
         "on-click": "pavucontrol"
     },
     "disk": {
-      "format": "SSD {percentage_used}%",
+      "format": "<span color=\"#ecf0c1\">SSD</span> {percentage_used}%",
       "path": "/"
     },
     "hyprland/window": {
-      "max-length": 25
+      "max-length": 50
     }
 }
