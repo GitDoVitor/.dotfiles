@@ -18,6 +18,10 @@ vim.keymap.set("n", "<leader>fmp", ":silent !black %<cr>")
 vim.keymap.set("n", "<leader>w", ":w<cr>")
 vim.keymap.set("n", "<leader>c", ":q<cr>")
 
+vim.keymap.set("n", "<leader>W", ":w<cr>")
+vim.keymap.set("n", "<leader>C", ":q<cr>")
+
+
 -- ignore capitalization mistakes
 vim.cmd("ca W w")
 vim.cmd("ca Q q")
