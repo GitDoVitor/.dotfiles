@@ -51,8 +51,6 @@ alias pa='$AURHELPER -Ss'                                              # list av
 alias pc='$AURHELPER -Sc'                                              # remove unused cache
 alias po='$AURHELPER -Qtdq | $AURHELPER -Rns -'                        # remove unused packages, also try > $AURHELPER -Qqd | $AURHELPER -Rsu --print -
 
-alias fastfetch='fastfetch --logo-type "arch_small"'
-
 # Directory navigation shortcuts
 alias ..='cd ..'
 alias ...='cd ../..'
