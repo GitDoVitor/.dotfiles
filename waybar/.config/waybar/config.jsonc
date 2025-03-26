@@ -2,7 +2,8 @@
     "height": 30, // Waybar height (to be removed for auto height)
     "spacing": 4, // Gaps between modules (4px)
     "modules-left": [
-      "idle_inhibitor",
+      // "idle_inhibitor",
+      "hyprland/workspaces",
       "hyprland/window",
     ],
     "modules-center": [
@@ -25,6 +26,7 @@
       "battery",
       "custom/separator",
       "clock",
+      "hyprland/language",
     ],
     "custom/separator": {
       "format": "/",
@@ -71,7 +73,7 @@
     "network": {
         "interval": 1,
         "tooltip": false,
-        "format-wifi": "<span color=\"#ecf0c1\">{ifname}</span> +{bandwidthUpBytes} -{bandwidthDownBytes}",
+        "format-wifi": "<span color=\"#ecf0c1\">{ifname}</span> {signalStrength}%",
         "format-ethernet": "<span color=\"#ecf0c1\">{ifname}</span> +{bandwidthUpBytes} -{bandwidthDownBytes}",
         "format-disconnected": "disconnected",
     },
@@ -85,10 +87,13 @@
         "on-click": "pavucontrol"
     },
     "disk": {
-      "format": "<span color=\"#ecf0c1\">SSD</span> {percentage_used}%",
+      "format": "<span color=\"#ecf0c1\">SSD</span> {used}",
       "path": "/"
     },
     "hyprland/window": {
       "max-length": 50
+    },
+    "sway/language": {
+      "format": "{short} {variant}",
     }
 }
