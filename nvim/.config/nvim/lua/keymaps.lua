@@ -12,7 +12,7 @@ vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- black python formatting
-vim.keymap.set("n", "<leader>fmp", ":silent !black %<cr>")
+-- vim.keymap.set("n", "<leader>fmp", ":silent !black %<cr>")
 
 -- save, quit
 vim.keymap.set("n", "<leader>w", ":w<cr>")
@@ -20,7 +20,6 @@ vim.keymap.set("n", "<leader>c", ":q<cr>")
 
 vim.keymap.set("n", "<leader>W", ":w<cr>")
 vim.keymap.set("n", "<leader>C", ":q<cr>")
-
 
 -- ignore capitalization mistakes
 vim.cmd("ca W w")
@@ -39,7 +38,10 @@ vim.keymap.set("n", "<leader><up>", ":resize +10<cr>")
 vim.keymap.set("n", "<leader><down>", ":resize -10<cr>")
 
 -- markdown preview
-vim.keymap.set({'n', 'v'}, '<leader>mp', ':MarkdownPreviewToggle<cr>')
+-- vim.keymap.set({'n', 'v'}, '<leader>mp', ':MarkdownPreviewToggle<cr>')
 
 -- comments toggler
 vim.keymap.set({'n', 'v'}, '<leader>/', ':CommentToggle<cr>')
+
+-- format code using LSP
+-- vim.keymap.set("n", "<leader>fmd", vim.lsp.buf.format)
