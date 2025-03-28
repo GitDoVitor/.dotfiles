@@ -36,7 +36,7 @@ window#waybar.hidden {
 
 #window {
   color: #ecf0c1;
-    margin: 0 4px;
+  margin: 0 4px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */

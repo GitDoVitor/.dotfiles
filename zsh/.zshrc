@@ -1,4 +1,4 @@
-pokego --random 1-3 -no-title
+pokego --name ditto -no-title
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -50,8 +50,6 @@ alias pl='$AURHELPER -Qs'                                              # list in
 alias pa='$AURHELPER -Ss'                                              # list available package
 alias pc='$AURHELPER -Sc'                                              # remove unused cache
 alias po='$AURHELPER -Qtdq | $AURHELPER -Rns -'                        # remove unused packages, also try > $AURHELPER -Qqd | $AURHELPER -Rsu --print -
-
-alias fastfetch='fastfetch --logo-type "arch_small"'
 
 # Directory navigation shortcuts
 alias ..='cd ..'
