@@ -2,7 +2,6 @@
     "height": 30, // Waybar height (to be removed for auto height)
     "spacing": 4, // Gaps between modules (4px)
     "modules-left": [
-      // "idle_inhibitor",
       "hyprland/workspaces",
       "hyprland/window",
     ],
@@ -25,8 +24,9 @@
       "custom/separator",
       "battery",
       "custom/separator",
-      "clock",
       "hyprland/language",
+      "custom/separator",
+      "clock",
     ],
     "custom/separator": {
       "format": "/",
@@ -81,7 +81,7 @@
         "format": "<span color=\"#ecf0c1\">VOL</span> {volume}% {format_source}",
         "format-bluetooth": "<span color=\"#ecf0c1\">BLU</span> {volume}% {format_source}",
         "format-bluetooth-muted": "<span color=\"#ecf0c1\">BLU</span> muted {format_source}",
-        "format-muted": "<span color=\"#ecf0c1\">MIC</span> muted {format_source}",
+        "format-muted": "<span color=\"#ecf0c1\">VOL</span> muted {format_source}",
         "format-source": "<span color=\"#ecf0c1\">MIC</span> {volume}%",
         "format-source-muted": "<span color=\"#ecf0c1\">MIC</span> muted",
         "on-click": "pavucontrol"
@@ -93,7 +93,10 @@
     "hyprland/window": {
       "max-length": 50
     },
-    "sway/language": {
-      "format": "{short} {variant}",
+    "hyprland/language": {
+      "format": "Lang: {}",
+      "format-abnt2": "AMERICA, HELL YEAH!",
+      "format-tr": "As bayrakları",
+      "keyboard-name": "at-translated-set-2-keyboard"
     }
 }
