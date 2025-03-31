@@ -94,9 +94,8 @@
       "max-length": 50
     },
     "hyprland/language": {
-      "format": "Lang: {}",
-      "format-abnt2": "AMERICA, HELL YEAH!",
-      "format-tr": "As bayrakları",
+      "format": "{}",
+      "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
       "keyboard-name": "at-translated-set-2-keyboard"
     }
 }
