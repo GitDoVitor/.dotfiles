@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source $HOME/.Xconfigs
+
 HOST=$(cat /etc/hostname)
 
 clear
@@ -13,19 +15,13 @@ if [[ $USER == "vitor" ]]; then
   echo -e "\n${BOL_MAG}Você deseja reconfigurar suas ${BOL_CYA}configurações pessoais? ${GRE}(y/n) ${RED}[enter=no] ${END}\n"
   read answerMyConfigs
 
-# Chaotic DISABLED FOR NOW
   echo -e "\n${BOL_MAG}Você deseja instalar o kernel da ${BOL_CYA}chaotic? ${GRE}(y/n) ${RED}[enter=no] ${END}\n"
   read answerChaotic
 
   echo -e "\n${BOL_MAG}Você deseja instalar o driver da ${BOL_CYA}nvidia? ${GRE}(y/n) ${RED}[enter=no] ${END}\n"
   read answerNvidia
-
-  # Generate grub
-  echo -e "\n${BOL_MAG}Você deseja instalar gerar novamente o ${BOL_CYA}mkinitcpio/grub? ${GRE}(y/n) ${RED}[enter=no] ${END}\n"
-  read answerGrub
 fi
 
-# Chaotic DISABLED FOR NOW
 sudo sed -i '/chaotic/d' /etc/pacman.conf
 sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
 sudo pacman-key --lsign-key 3056513887B78AEB
@@ -33,7 +29,7 @@ sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.ta
 sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' --noconfirm
 sudo pacman -Sy --noconfirm && paru -Su --noconfirm
 echo "[chaotic-aur]
-# Include = /etc/pacman.d/chaotic-mirrorlist" | sudo tee -a /etc/pacman.conf
+Include = /etc/pacman.d/chaotic-mirrorlist" | sudo tee -a /etc/pacman.conf
 
 # Update packages and keys
 sudo pacman -Syyu --noconfirm
@@ -109,8 +105,6 @@ echo -e "\n${BOL_GRE}Set permissions${END}\n"
 sudo chown -R $USER:$USER /home/$USER
 
 # My configs
-#
-# TODO
 if [[ $USER == "vitor" ]]; then
   if [[ $answerMyConfigs != ${answerMyConfigs#[Yys]} ]]; then
     echo -e "${BOL_GRE}Ok, reconfigurando ${BOL_MAG}configurações pessoais${END}\n"
@@ -119,9 +113,6 @@ if [[ $USER == "vitor" ]]; then
     echo -e "${BOL_RED}Ok, não irei reconfigurar suas ${BOL_MAG}configurações pessoais${END}\n"
   fi
 
-# Chaotic DISABLED FOR NOW
-#
-# TODO
 if [[ $answerChaotic != ${answerChaotic#[Yys]} ]]; then
   echo -e "${BOL_GRE}Ok, instalando kernel da ${BOL_MAG}chaotic${END}\n"
   bash $HOME/.dotfiles/setup/chaotic-kernel.sh
@@ -136,15 +127,6 @@ fi
     bash $HOME/.dotfiles/setup/nvidia.sh
   else
     echo -e "${BOL_RED}Ok, não irei instalar o driver da ${BOL_MAG}nvidia${END}\n"
-  fi
-
-  if [[ $answerGrub != ${answerGrub#[Yys]} ]]; then
-    echo -e "${BOL_GRE}Ok, gerando ${BOL_MAG}mkinitcpio/grub${END}\n"
-    sudo mkinitcpio -P
-    sudo grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub
-    sudo grub-mkconfig -o /boot/grub/grub.cfg
-  else
-    echo -e "${BOL_RED}Ok, não irei gerar o ${BOL_MAG}mkinitcpio/grub${END}\n"
   fi
 fi
 
