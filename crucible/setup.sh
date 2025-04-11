@@ -45,6 +45,16 @@ echo -e "\n${MAG}Iniciando a configuração inicial do sistema... ${END}\n"
 
 echo -e "\n${MAG}Adicionando o repositório do ${RED}chaotic ${MAG}ao ${CYA}pacman ${MAG}e ${CYA}paru${MAG}... ${END}\n"
 
+if [[ ! -f $(which paru) ]]; then
+  pwd=$(pwd)
+  echo -e "\n${MAG}Instalando Paru... ${END}\n"
+  sudo pacman -Sy base-devel --noconfirm
+  rm -rf $HOME/paru && git clone https://aur.archlinux.org/paru.git $HOME/paru && cd $HOME/paru && makepkg -si --noconfirm && rm -rf $HOME/paru
+  cd $pwd
+else
+  echo -e "\n${MAG}Paru já está instalado! ${END}\n"
+fi
+
 sudo sed -i '/chaotic/d' /etc/pacman.conf
 sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
 sudo pacman-key --lsign-key 3056513887B78AEB
@@ -58,16 +68,6 @@ sudo pacman -Syyu --noconfirm
 sudo pacman-key --populate archlinux
 
 bash $HOME/.dotfiles/crucible/makepkg.sh
-
-if [[ ! -f $(which paru) ]]; then
-  pwd=$(pwd)
-  echo -e "\n${MAG}Instalando Paru... ${END}\n"
-  sudo pacman -Sy base-devel --noconfirm
-  rm -rf $HOME/paru && git clone https://aur.archlinux.org/paru.git $HOME/paru && cd $HOME/paru && makepkg -si --noconfirm && rm -rf $HOME/paru
-  cd $pwd
-else
-  echo -e "\n${MAG}Paru já está instalado! ${END}\n"
-fi
 
 echo -e "\n${MAG}Instalando aplicativos do sistema... ${END}\n"
 install_packages "${SYSTEM_UTILS[@]}"
