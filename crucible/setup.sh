@@ -45,14 +45,28 @@ echo -e "\n${MAG}Iniciando a configuração inicial do sistema... ${END}\n"
 
 echo -e "\n${MAG}Adicionando o repositório do ${RED}chaotic ${MAG}ao ${CYA}pacman ${MAG}e ${CYA}paru${MAG}... ${END}\n"
 
-if [[ ! -f $(which paru) ]]; then
-  pwd=$(pwd)
-  echo -e "\n${MAG}Instalando Paru... ${END}\n"
-  sudo pacman -Sy base-devel --noconfirm
-  rm -rf $HOME/paru && git clone https://aur.archlinux.org/paru.git $HOME/paru && cd $HOME/paru && makepkg -si --noconfirm && rm -rf $HOME/paru
-  cd $pwd
+# if [[ ! -f $(which paru) ]]; then
+#   pwd=$(pwd)
+#   echo -e "\n${MAG}Instalando Paru... ${END}\n"
+#   sudo pacman -Sy base-devel --noconfirm
+#   rm -rf $HOME/paru && git clone https://aur.archlinux.org/paru.git $HOME/paru && cd $HOME/paru && makepkg -si --noconfirm && rm -rf $HOME/paru
+#   cd $pwd
+# else
+#   echo -e "\n${MAG}Paru já está instalado! ${END}\n"
+# fi
+
+# Install yay AUR helper if not present
+if ! command -v yay &> /dev/null; then
+  echo "Installing yay AUR helper..."
+  sudo pacman -S --needed git base-devel --noconfirm
+  git clone https://aur.archlinux.org/yay.git
+  cd yay
+  echo "building yay.... yaaaaayyyyy"
+  makepkg -si --noconfirm
+  cd ..
+  rm -rf yay
 else
-  echo -e "\n${MAG}Paru já está instalado! ${END}\n"
+  echo "yay is already installed"
 fi
 
 sudo sed -i '/chaotic/d' /etc/pacman.conf
@@ -60,7 +74,7 @@ sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
 sudo pacman-key --lsign-key 3056513887B78AEB
 sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' --noconfirm
 sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' --noconfirm
-sudo pacman -Sy --noconfirm && paru -Su --noconfirm
+sudo pacman -Sy --noconfirm && yay -Su --noconfirm
 echo "[chaotic-aur]
 Include = /etc/pacman.d/chaotic-mirrorlist" | sudo tee -a /etc/pacman.conf
 
