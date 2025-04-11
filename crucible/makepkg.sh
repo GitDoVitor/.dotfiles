@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-paru -S ananicy-cpp irqbalance memavaild nohang preload prelockd uresourced --noconfirm
+yay -S ananicy-cpp irqbalance memavaild nohang preload prelockd uresourced --noconfirm
 
 sudo systemctl disable systemd-oomd
 
