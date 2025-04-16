@@ -17,6 +17,6 @@ require("keymaps")
 require("vim_options")
 require("lazy").setup({
   spec = { { import = "plugins" } },
-  install = { colorscheme = { "spaceduck" } },
+  install = { colorscheme = { "wal" } },
   checker = { enabled = true },
 })
