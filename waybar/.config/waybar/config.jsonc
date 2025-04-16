@@ -46,48 +46,48 @@
         "tooltip": false
     },
     "cpu": {
-        "format": "<span color=\"#ecf0c1\">CPU</span> {usage}%",
+        "format": "<span color=\"#c2c2c2\">CPU</span> {usage}%",
         "tooltip": false
     },
     "memory": {
-        "format": "<span color=\"#ecf0c1\">RAM</span> {}%"
+        "format": "<span color=\"#c2c2c2\">RAM</span> {}%"
     },
     "temperature": {
         "critical-threshold": 80,
-        "format": "<span color=\"#ecf0c1\">TEMP</span> {temperatureC}°C",
+        "format": "<span color=\"#c2c2c2\">TEMP</span> {temperatureC}°C",
     },
     "backlight": {
-        "format": "<span color=\"#ecf0c1\">B-LIGHT</span> {percent}%",
+        "format": "<span color=\"#c2c2c2\">B-LIGHT</span> {percent}%",
     },
     "battery": {
         "states": {
             "warning": 30,
             "critical": 15
         },
-        "format": "<span color=\"#ecf0c1\">BAT</span> {capacity}%",
-        "format-full": "<span color=\"#ecf0c1\">BAT</span> full",
-        "format-charging": "<span color=\"#ecf0c1\">BAT</span> charging",
-        "format-plugged": "<span color=\"#ecf0c1\">BAT</span> plugged",
+        "format": "<span color=\"#c2c2c2\">BAT</span> {capacity}%",
+        "format-full": "<span color=\"#c2c2c2\">BAT</span> full",
+        "format-charging": "<span color=\"#c2c2c2\">BAT</span> charging",
+        "format-plugged": "<span color=\"#c2c2c2\">BAT</span> plugged",
         "tooltip": false
     },
     "network": {
         "interval": 1,
         "tooltip": false,
-        "format-wifi": "<span color=\"#ecf0c1\">{ifname}</span> {signalStrength}%",
-        "format-ethernet": "<span color=\"#ecf0c1\">{ifname}</span> +{bandwidthUpBytes} -{bandwidthDownBytes}",
+        "format-wifi": "<span color=\"#c2c2c2\">{ifname}</span> {signalStrength}%",
+        "format-ethernet": "<span color=\"#c2c2c2\">{ifname}</span> +{bandwidthUpBytes} -{bandwidthDownBytes}",
         "format-disconnected": "disconnected",
     },
     "pulseaudio": {
-        "format": "<span color=\"#ecf0c1\">VOL</span> {volume}% {format_source}",
-        "format-bluetooth": "<span color=\"#ecf0c1\">BLU</span> {volume}% {format_source}",
-        "format-bluetooth-muted": "<span color=\"#ecf0c1\">BLU</span> muted {format_source}",
-        "format-muted": "<span color=\"#ecf0c1\">VOL</span> muted {format_source}",
-        "format-source": "<span color=\"#ecf0c1\">MIC</span> {volume}%",
-        "format-source-muted": "<span color=\"#ecf0c1\">MIC</span> muted",
+        "format": "<span color=\"#c2c2c2\">VOL</span> {volume}% {format_source}",
+        "format-bluetooth": "<span color=\"#c2c2c2\">BLU</span> {volume}% {format_source}",
+        "format-bluetooth-muted": "<span color=\"#c2c2c2\">BLU</span> muted {format_source}",
+        "format-muted": "<span color=\"#c2c2c2\">VOL</span> muted {format_source}",
+        "format-source": "<span color=\"#c2c2c2\">MIC</span> {volume}%",
+        "format-source-muted": "<span color=\"#c2c2c2\">MIC</span> muted",
         "on-click": "pavucontrol"
     },
     "disk": {
-      "format": "<span color=\"#ecf0c1\">SSD</span> {used}",
+      "format": "<span color=\"#c2c2c2\">SSD</span> {used}",
       "path": "/"
     },
     "hyprland/window": {
