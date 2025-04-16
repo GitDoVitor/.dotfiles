@@ -1,0 +1,36 @@
+* {
+    font-family: "Iosevka", monospace;
+    font-size: 14px;
+    background-color: transparent;
+}
+
+/* Janela principal */
+window {
+    background-color: rgba(0, 0, 0, 0.3); /* Semitransparente, ajustável com compositor */
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Layout geral */
+#input {
+    margin: 10px 0;
+    padding: 6px 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid gray;
+    border-radius: 0px;
+}
+
+#entry {
+    padding: 10px;
+    border: none;
+}
+
+#entry:selected {
+    background-color: #ae4527;
+    color: @background;
+}
+
+#entry > box {
+    spacing: 10px;
+}
