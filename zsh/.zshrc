@@ -14,6 +14,8 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
+(cat ~/.cache/wal/sequences &)
+
 plugins=(
   git
   sudo
