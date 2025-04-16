@@ -95,3 +95,4 @@ ex ()
 
 
 
+eval "$(starship init zsh)"
