@@ -1,88 +1,45 @@
-/* @import url("./mocha.css"); */
-@import url("./spaceduck.css");
+@import "../../.cache/wal/colors-waybar.css";
 
 * {
     border: none;
-    font-family: JetBrainsMonoNF;
-    font-size: 14px;
+    font-family: "Iosevka Nerd Font", "JetBrains Mono", monospace;
+    font-size: 12px;
+    font-weight: 500; /* Peso médio para melhor legibilidade */
     min-height: 0;
+    background: transparent;
 }
 
 window#waybar {
-    background-color: rgba(15, 17, 27, 0.8);
-    border-bottom: 1px solid @foreground;
-    color: rgba(236, 240, 193, .5);
+    color: @cursor; /* Texto branco suave */
     transition-property: background-color;
-    transition-duration: .5s;
+    transition-duration: 0.5s;
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
+#workspaces button {
+    padding: 0 8px;
+    color: @cursor;
+    background: transparent;
 }
 
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#idle_inhibitor {
+#workspaces button.focused {
+    color: @cursor;
+    background-color: @color5; /* Azul pastel */
+}
+
+#workspaces button:hover {
+    background-color: @color5; /* Hover sutil */
+}
+
+#clock, #battery, #network, #pulseaudio, #tray {
     padding: 0 10px;
-    /* color: ; */
+    color: #cdd6f4;
+    background-color: transparent;
 }
 
-#window {
-  color: #ecf0c1;
-  margin: 0 4px;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
-}
-
-@keyframes blink {
-    to {
-        color: @space-orange;
-    }
-}
-
-#battery.critical:not(.charging) {
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+#battery.critical {
+    color: #f38ba8; /* Vermelho pastel para bateria crítica */
 }
 
 #network.disconnected {
-  color: @space-orange;
-}
-
-#clock {
-  color: #ecf0c1;
-}
-
-#temperature.critical {
-    color: @space-orange;
-}
-
-#idle_inhibitor {
-  color: rgba(236, 240, 193, .5);
-}
-
-#idle_inhibitor.activated {
-    color: @selection-text;
-}
-
-#custom-separator {
-  color: rgba(236, 240, 193, .5);
+    color: #f38ba8; /* Vermelho pastel para offline */
 }
