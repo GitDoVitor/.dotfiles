@@ -1,6 +1,4 @@
-theme = spaceduck
-font-family = JetBrainsMono NF
-font-family-italic = JetBrainsMono NF Italic
-font-family-bold = JetBrainsMono NF Bold
+theme = /home/vitor/.cache/wal/ghostty.conf
+font-family = Iosevka Nerd Font
 
 config-file = keybinds
